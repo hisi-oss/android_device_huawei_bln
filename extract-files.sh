@@ -8,6 +8,9 @@
 
 function blob_fixup() {
     case "${1}" in
+        odm/lib64/hwcam/hwcam.hi6250.m.BERLIN.so)
+            "${PATCHELF}" --add-needed "libtinyxml2_shim.so" "${2}"
+            ;;
         vendor/etc/libnfc-brcm.conf)
             sed -i 's\/data/nfc\/data/vendor/nfc\g' "${2}"
             ;;
